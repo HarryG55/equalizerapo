@@ -56,9 +56,9 @@ void GraphicEQFilterGUIScene::setNodes(const std::vector<FilterNode>& nodes)
 	noUpdateModel = false;
 }
 
-void GraphicEQFilterGUIScene::addNode(double hz, double db)
+void GraphicEQFilterGUIScene::addNode(double hz, double db)			//加入一个EQ的控制点
 {
-	FilterNode node(hz, db);
+	FilterNode node(hz, db);										
 	vector<FilterNode>::iterator it = lower_bound(nodes.begin(), nodes.end(), node);
 	int index = it - nodes.begin();
 	nodes.insert(it, node);

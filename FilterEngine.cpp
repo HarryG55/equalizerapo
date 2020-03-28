@@ -409,7 +409,7 @@ void FilterEngine::process(float* output, float* input, unsigned frameCount)
 
 void FilterEngine::process(float** output, float** input, unsigned frameCount)
 {
-	if (currentConfig->isEmpty() && nextConfig == NULL)
+	if (currentConfig->isEmpty() && nextConfig == NULL)							
 	{
 		// avoid double copying cost if no processing will happen anyway
 		if (realChannelCount == outputChannelCount)
@@ -417,7 +417,7 @@ void FilterEngine::process(float** output, float** input, unsigned frameCount)
 			if (input != output)
 			{
 				for (unsigned c = 0; c < realChannelCount; c++)
-					memcpy(output[c], input[c], frameCount * sizeof(float));
+					memcpy(output[c], input[c], frameCount * sizeof(float));		//内存拷贝函数：从input拷贝到output 拷贝sizeof(float)字节
 			}
 
 			return;

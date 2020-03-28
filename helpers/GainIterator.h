@@ -21,18 +21,18 @@
 
 #include <vector>
 
-struct FilterNode
+struct FilterNode		//过滤器节点
 {
-	double freq;
-	double dbGain;
+	double freq;		//频率
+	double dbGain;		//增益
 
-	FilterNode(double freq, double dbGain)
+	FilterNode(double freq, double dbGain)	//函数初始化调用直接赋值即可
 	{
 		this->freq = freq;
 		this->dbGain = dbGain;
 	}
 
-	bool operator<(FilterNode other)
+	bool operator<(FilterNode other)	
 	{
 		return freq < other.freq;
 	}
